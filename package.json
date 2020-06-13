@@ -1,0 +1,48 @@
+{
+  "name": "cloud-build-notifier",
+  "version": "1.0.0",
+  "description": "Sends email about Google Cloud Build status",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "gcp-build": "npm run build",
+    "build": "tsc -b . --verbose",
+    "watch": "tsc -b . --verbose --watch"
+  },
+  "author": {
+    "name": "Ivaylo Stoyanov",
+    "email": "me@ivkos.com",
+    "url": "https://github.com/ivkos"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivkos/cloud-build-notifier.git"
+  },
+  "keywords": [
+    "google",
+    "cloud",
+    "build",
+    "gcp",
+    "email",
+    "notifications",
+    "sendgrid"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivkos/cloud-build-notifier/issues"
+  },
+  "homepage": "https://github.com/ivkos/cloud-build-notifier#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^7.2.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@google-cloud/cloudbuild": "^1.5.0",
+    "@google-cloud/functions-framework": "^1.5.1",
+    "@google-cloud/pubsub": "^2.1.0",
+    "@types/express": "^4.17.6",
+    "@types/node": "^10.17.26",
+    "typescript": "^3.9.5"
+  }
+}

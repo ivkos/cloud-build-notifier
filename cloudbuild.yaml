@@ -1,0 +1,13 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud-slim'
+    args:
+      - functions
+      - deploy
+      - ${_NAME}
+      - --region=${_REGION}
+      - --trigger-topic=cloud-builds
+      - --allow-unauthenticated
+      - --source=.
+      - --entry-point=handleEvent
+      - --runtime=nodejs10
+      - --memory=128MB
