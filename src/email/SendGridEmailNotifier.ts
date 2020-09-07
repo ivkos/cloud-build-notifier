@@ -33,7 +33,8 @@ export class SendGridEmailNotifier implements EmailNotifier {
             from: { name: this.emailFromName, email: this.emailFrom },
             to: this.getRecipients(),
             subject: this.getSubjectLine(build),
-            text: `Views logs: ${build.logUrl}`,
+            text: `View logs:\n${build.logUrl}`,
+            html: `<a href="${build.logUrl}">Click here to view logs...</a>`
         })
     }
 
